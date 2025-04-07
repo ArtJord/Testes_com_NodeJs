@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Node App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mini App Node.js 🚀</h1>
+
+    <button onclick="getHora()">Ver Hora Atual</button>
+    <button onclick="getSaudacao()">Receber Saudação</button>
+
+    <div id="resposta"></div>
+
+    <script>
+        async function getHora() {
+            const res = await fetch('/hora');
+            const text = await res.text();
+            document.getElementById('resposta').innerText = text;
+        }
+
+        async function getSaudacao() {
+            const nome = prompt("Digite seu nome:");
+            const res = await fetch(`/ola?nome=${encodeURIComponent(nome)}`);
+            const text = await res.text();
+            document.getElementById('resposta').innerText = text;
+        }
+    </script>
+</body>
+</html>

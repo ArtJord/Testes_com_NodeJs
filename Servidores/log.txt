@@ -1,0 +1,5 @@
+Rota acessada: /info - Status: 200
+Rota acessada: /sobre - Status: 200
+Rota acessada: / - Status: 200
+
+
